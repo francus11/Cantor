@@ -1,0 +1,37 @@
+﻿<Window x:Class="Cantor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cantor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="225" Width="450">
+    <Grid HorizontalAlignment="Center" Width="450">
+        <Grid HorizontalAlignment="Left" Height="160" Margin="49,0,0,0" VerticalAlignment="Center" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"><Run Language="pl-pl" Text="Waluta początkowa"/></TextBlock>
+            <ComboBox x:Name="primaryComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Initialized="ComboBox_Initialized" SelectionChanged="SelectionChanged" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2"><Run Language="pl-pl" Text="Ilość"/></TextBlock>
+            <TextBox x:Name="inputField" HorizontalAlignment="Center" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" TextChanged="TextBox_TextChanged" PreviewTextInput="inputField_PreviewTextInput" Grid.Row="3"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="160" Margin="248,0,0,0" VerticalAlignment="Center" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center"><Run Language="pl-pl" Text="Waluta końcowa"/></TextBlock>
+            <ComboBox x:Name="secondaryComboBox" HorizontalAlignment="Center" Margin="-1,0,0,0" VerticalAlignment="Center" Width="120" Initialized="ComboBox_Initialized" SelectionChanged="SelectionChanged" Grid.Row="1" />
+            <TextBlock x:Name="outputTextBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Obliczona wartość" VerticalAlignment="Center" Grid.Row="3"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.693,-3.569" Margin="0,36,0,0" Grid.Row="1" Grid.RowSpan="2"><Run Language="pl-pl" Text="Ilość"/></TextBlock>
+
+        </Grid>
+
+    </Grid>
+</Window>
