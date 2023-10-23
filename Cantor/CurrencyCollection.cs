@@ -22,8 +22,9 @@ namespace Cantor
         {
             XMLCurrenciesProvider xMLCurrenciesProvider = new XMLCurrenciesProvider();
             List<Currency> currencies = xMLCurrenciesProvider.DownloadData("https://www.nbp.pl/kursy/xml/lasta.xml");
-            Currency pln = new Currency("Polski złoty nowy", "PLN", 1, 1);
+            Currency pln = new Currency("polski złoty nowy", "PLN", 1, 1);
             currencies.Add(pln);
+            currencies = currencies.OrderBy(x => x.ToString()).ToList();
             _currencies = currencies;
         }
 

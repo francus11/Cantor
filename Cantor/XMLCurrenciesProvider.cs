@@ -13,6 +13,16 @@ namespace Cantor
         {
             string xml = LoadXMLFromWeb(url);
 
+            xml = ConvertXMLEncoding(xml);
+
+            var result = XMLToList(xml);
+            
+
+            return result;
+        }
+
+        private string ConvertXMLEncoding(string xml)
+        {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             Encoding iso8859Encoding = Encoding.GetEncoding("ISO-8859-2");
@@ -29,11 +39,15 @@ namespace Cantor
 
             byte[] encodedBytes = encoding.GetBytes(xml);
             string decodedXml = encoding.GetString(encodedBytes);*/
+
+            return decodedXml;
+        }
+
+        private List<Currency> XMLToList(string xml) 
+        {
             List<Currency> result = new List<Currency>();
 
-            XDocument xdoc = XDocument.Parse(decodedXml);
-
-
+            XDocument xdoc = XDocument.Parse(xml);
 
             foreach (XElement pozycja in xdoc.Element("tabela_kursow").Elements("pozycja"))
             {
